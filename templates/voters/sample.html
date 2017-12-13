@@ -1,0 +1,32 @@
+{% extends "voters/base.html" %}
+
+{% block content %}
+
+    <h1>Voter sample</h1>
+
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        {% for obj in object_list %}
+        <tr>
+            <td><a href="{% url 'detail' obj.ncid %}">{{ obj.last_name }}</a></td>
+            <td>
+                {{ obj.res_street_address }}
+            </td>
+            <td>
+                {{ obj.res_city }}
+            </td>
+            <td>
+                {{ obj.full_phone_number }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
