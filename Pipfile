@@ -12,10 +12,9 @@ ipdb = "*"
 
 [packages]
 
-"psycopg2" = "*"
 social-auth-app-django = "*"
-"python3-openid" = "*"
 django = "*"
+"psycopg2" = "*"
 
 
 [requires]
