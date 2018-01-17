@@ -8,6 +8,8 @@ name = "pypi"
 [dev-packages]
 
 ipdb = "*"
+awscli = "*"
+ipython = "*"
 
 
 [packages]
@@ -15,6 +17,8 @@ ipdb = "*"
 social-auth-app-django = "*"
 django = "*"
 "psycopg2" = "*"
+zappa = "*"
+python-dotenv = "*"
 
 
 [requires]

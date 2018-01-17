@@ -5,3 +5,4 @@
 node.json
 .env
 .coverage
+django-nc-votes-*.zip
