@@ -7,6 +7,6 @@ from .views import VoterSampleView, VoterDetailView
 
 app_name = 'voters'
 urlpatterns = [
-    path('sample/', VoterSampleView.as_view(), name='sample'),
-    path('<int:ncid>/', VoterDetailView.as_view(), name='detail'),
+    path('', VoterSampleView.as_view(), name='sample'),
+    path('<int:pk>/', VoterDetailView.as_view(), name='detail'),
 ]

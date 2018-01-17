@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv(), override=True)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,8 +29,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'ncvotes.tyger.pro',
+]
 
 # Application definition
 
@@ -131,6 +136,7 @@ STATIC_URL = '/static/'
 SOCIAL_AUTH_SLACK_KEY = os.getenv('SOCIAL_AUTH_SLACK_KEY')
 SOCIAL_AUTH_SLACK_SECRET = os.getenv('SOCIAL_AUTH_SLACK_SECRET')
 SOCIAL_AUTH_SLACK_TEAM = 'ncvotes'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.slack.SlackOAuth2',
