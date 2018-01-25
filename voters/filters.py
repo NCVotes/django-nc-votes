@@ -13,6 +13,11 @@ class VoterFilter(django_filters.FilterSet):
         label='and less than',
         lookup_expr='lt',
     )
+    birth_state = django_filters.MultipleChoiceFilter(
+        name='birth_state',
+        label='Birth state',
+        choices=Voter.STATE_CHOICES,
+    )
     gender_code = django_filters.MultipleChoiceFilter(
         name='gender_code',
         label='Gender',
