@@ -1,0 +1,40 @@
+{% extends "voters/base.html" %}
+{% load humanize %}
+
+{% block content %}
+    <h1>Voters: {{ count|intcomma }}</h1>
+    <hr>
+    <form action="" method="get">
+        <div class="ageWrapper">
+            {{ filter.form.birth_age__gt.label_tag }}
+            {{ filter.form.birth_age__gt }}
+            {{ filter.form.birth_age__lt.label_tag }}
+            {{ filter.form.birth_age__lt }}
+        </div>
+        <div class="genderWrapper">
+            {{ filter.form.gender_code.label_tag }}
+            {{ filter.form.gender_code }}
+        </div>
+        <div class="raceWrapper">
+            {{ filter.form.race_code.label_tag }}
+            {{ filter.form.race_code }}
+        </div>
+        <div class="ethnicityWrapper">
+            {{ filter.form.ethnic_code.label_tag }}
+            {{ filter.form.ethnic_code }}
+        </div>
+        <div class="regDateWrapper">
+            {{ filter.form.registr_dt__gt.label_tag }}
+            {{ filter.form.registr_dt__gt }}
+            {{ filter.form.registr_dt__lt.label_tag }}
+            {{ filter.form.registr_dt__lt }}
+        </div>
+        <div class="partyWrapper">
+            {{ filter.form.party_cd.label_tag }}
+            {{ filter.form.party_cd }}
+        </div>
+        <div>
+            <input type="submit" value='Filter'/>
+        </div>
+    </form>
+{% endblock %}

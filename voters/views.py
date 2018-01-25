@@ -5,7 +5,9 @@ Views for North Carolina voters
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .filters import VoterFilter
 from .models import Voter, VoterHistory
 
 
@@ -30,3 +32,11 @@ class VoterDetailView(LoginRequiredMixin, generic.DetailView):
 
     model = Voter
     template_name = 'voters/detail.html'
+
+
+@login_required
+def voter_count(request):
+    f = VoterFilter(request.GET)
+    return render(
+        request, 'voters/filter.html', {'filter': f, 'count': f.qs.count()}
+    )

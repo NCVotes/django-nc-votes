@@ -3,10 +3,11 @@
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import VoterSampleView, VoterDetailView
+from .views import VoterSampleView, VoterDetailView, voter_count
 
 app_name = 'voters'
 urlpatterns = [
     path('', VoterSampleView.as_view(), name='sample'),
     path('<int:pk>/', VoterDetailView.as_view(), name='detail'),
+    path('count/', voter_count)
 ]

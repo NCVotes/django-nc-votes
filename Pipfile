@@ -19,6 +19,7 @@ django = "*"
 "psycopg2" = "*"
 zappa = "*"
 python-dotenv = "*"
+django-filter = "*"
 
 
 [requires]

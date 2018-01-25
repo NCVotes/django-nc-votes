@@ -43,10 +43,41 @@ class Voter(models.Model):
     mail_state = models.CharField('mail_state', max_length=2)
     mail_zipcode = models.CharField('mail_zipcode', max_length=9)
     full_phone_number = models.CharField('full_phone_number', max_length=12)
-    race_code = models.CharField('race_code', max_length=3)
-    ethnic_code = models.CharField('ethnic_code', max_length=3)
-    party_cd = models.CharField('party_cd', max_length=3)
-    gender_code = models.CharField('gender_code', max_length=1)
+    RACE_CHOICES = (
+        ('B', 'African American/Black'),
+        ('A', 'Asian'),
+        ('I', 'American Indian/Alaska Native'),
+        ('M', 'Multiracial'),
+        ('O', 'Other'),
+        ('U', 'Undesignated'),
+        ('W', 'White'),
+    )
+    race_code = models.CharField(
+        'race_code', choices=RACE_CHOICES, max_length=3
+    )
+    ETHNIC_CHOICES = (
+        ('HL', 'Hispanic/Latino'),
+        ('NL', 'Not Hispanic/Latino'),
+        ('UN', 'Undesignated'),
+    )
+    ethnic_code = models.CharField(
+        'ethnic_code', choices=ETHNIC_CHOICES, max_length=3
+    )
+    PARTY_CHOICES = (
+        ('DEM', 'Democrat'),
+        ('LIB', 'Libertarian'),
+        ('REP', 'Republican'),
+        ('UNA', 'Unaffiliated'),
+    )
+    party_cd = models.CharField(
+        'party_cd', choices=PARTY_CHOICES, max_length=3
+    )
+    GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('U', 'Undesignated'),
+    )
+    gender_code = models.CharField('gender_code', max_length=1, choices=GENDER_CHOICES)
     birth_place = models.CharField('birth_place', max_length=30)
     drivers_lic = models.BooleanField('drivers_lic')
     registr_dt = models.DateField('registr_dt')
