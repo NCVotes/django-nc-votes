@@ -15,12 +15,12 @@
         </thead>
         {% for obj in object_list %}
         <tr>
-            <td><a href="{% url 'voters:detail' obj.id %}">{{ obj.last_name }}, {{ obj.first_name}} {{ obj.middle_name }}</a></td>
+            <td><a href="{% url 'voters:detail' obj.ncid %}">{{ obj.full_name }}</a></td>
             <td>
                 {{ obj.res_street_address }}
             </td>
             <td>
-                {{ obj.res_city }}
+                {{ obj.res_city_desc }}
             </td>
             <td>
                 {{ obj.full_phone_number }}

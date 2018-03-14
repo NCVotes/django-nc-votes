@@ -6,10 +6,10 @@
     <hr>
     <form action="" method="get">
         <div class="ageWrapper">
-            {{ filter.form.birth_age__gt.label_tag }}
-            {{ filter.form.birth_age__gt }}
-            {{ filter.form.birth_age__lt.label_tag }}
-            {{ filter.form.birth_age__lt }}
+            {{ filter.form.birth_age_gt.label_tag }}
+            {{ filter.form.birth_age_gt }}
+            {{ filter.form.birth_age_lt.label_tag }}
+            {{ filter.form.birth_age_lt }}
         </div>
         <div>
             {{ filter.form.birth_state.label_tag }}
@@ -37,8 +37,48 @@
             {{ filter.form.party_cd.label_tag }}
             {{ filter.form.party_cd }}
         </div>
+        <div class="countyWrapper">
+            {{ filter.form.county.label_tag }}
+            {{ filter.form.county }}
+        </div>
+
+        <div class="congressionalDistrictWrapper">
+            {{ filter.form.congressional.label_tag }}
+            {{ filter.form.congressional }}
+        </div>
+        <div class="stateSenateDistrictWrapper">
+            {{ filter.form.state_senate.label_tag }}
+            {{ filter.form.state_senate }}
+        </div>
+        <div class="stateHouseDistrictWrapper">
+            {{ filter.form.state_house.label_tag }}
+            {{ filter.form.state_house }}
+        </div>
+        <div class="superiorCourtDistrictWrapper">
+            {{ filter.form.superior_court.label_tag }}
+            {{ filter.form.superior_court }}
+        </div>
+        <div class="votedInWrapper">
+            {{ filter.form.histories_election_include.label_tag }}
+            {{ filter.form.histories_election_include }}
+        </div>
+        <div class="didNotVoteInWrapper">
+            {{ filter.form.histories_election_exclude.label_tag }}
+            {{ filter.form.histories_election_exclude }}
+        </div>
         <div>
             <input type="submit" value='Filter'/>
         </div>
     </form>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $("option").click( function() { 
+                    if ( $(this).selected ) {
+                        $(this).removeAttr('selected');
+                    } else {
+                        $(this).attr('selected', 'selected');
+                    }
+            })
+        });
+    </script>
 {% endblock %}

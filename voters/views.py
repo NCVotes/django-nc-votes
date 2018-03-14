@@ -8,7 +8,7 @@ from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .filters import VoterFilter
-from .models import Voter, VoterHistory
+from .models import Voter
 
 
 class VoterSampleView(LoginRequiredMixin, generic.ListView):
@@ -32,6 +32,7 @@ class VoterDetailView(LoginRequiredMixin, generic.DetailView):
 
     model = Voter
     template_name = 'voters/detail.html'
+    pk_url_kwarg = 'ncid'
 
 
 @login_required

@@ -44,9 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
     'django_filters',
     'social_django',
-    'voters',
+    'voter', # original models
+    'voters', # new app with processed models and frontend tools
 ]
 
 MIDDLEWARE = [

@@ -21,6 +21,131 @@
             <th>Last name</th>
             <td>{{ object.last_name }}</td>
         </tr>
-    </table>
+        <tr>
+            <th>Suffix</th>
+            <td>{{ object.name_suffix_lbl }}</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td>{{ object.birth_age }}</td>
+        </tr>
+        <tr>
+            <th>Race</th>
+            <td>{{ object.get_race_code_display }}</td>
+        </tr>
+        <tr>
+            <th>Ethnicity</th>
+            <td>{{ object.get_ethnic_code_display }}</td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            <td>{{ object.get_gender_code_display }}</td>
+        </tr>
+        <tr>
+            <th>Confidentiality</th>
+            <td>{{ object.confidential_ind }}</td>
+        </tr>
+        <tr>
+            <th>Voter Registration Number</th>
+            <td>{{ object.voter_reg_num }}</td>
+        </tr>
+        <tr>
+            <th>Registration Date</th>
+            <td>{{ object.registr_dt }}</td>
+        </tr>
+        <tr>
+            <th>Voter Status</th>
+            <td>{{ object.voter_status_desc }} ({{ object.voter_status_reason_desc }})</td>
+        </tr>
+        <tr>
+            <th>Party</th>
+            <td>{{ object.get_party_cd_display }}</td>
+        </tr>
+        <tr>
+            <th>Residential Address</th>
+            <td>
+                <p>{{ object.res_street_address }}</p>
+                <p>{{ object.res_city_desc }}, {{ object.state_cd }} {{ object.zip_code }}</p>
+            </td>
+        </tr>
+        <tr>
+            <th>Mailing Address </th>
+            <td>
+                <p>{{ object.mail_addr1 }}</p>
+                <p>{{ object.mail_addr2 }}</p>
+                <p>{{ object.mail_addr3 }}</p>
+                <p>{{ object.mail_addr4 }}</p>
+                <p>{{ object.mail_city }}, {{ object.mail_state }} {{ object.mail_zipcode }}</p>
+            </td>
+        </tr>
+        <tr>
+            <th>full_phone_number</th>
+            <td>{{ object.full_phone_number }}</td>
+        </tr>
+        <tr>
+            <th>county_desc</th>
+            <td>{{ county_desc }}</td>
+        <tr>
+            <th>precinct_desc</th>
+            <td>{{ object.precinct_desc }} ({{ object.precinct_abbrv }})</td>
+        <tr>
+            <th>municipality_desc</th>
+            <td>{{ object.municipality_desc }} ({{ object.municipality_abbrv }})</td>
+        <tr>
+            <th>ward_desc</th>
+            <td>{{ object.ward_desc }} ({{ object.ward_abbrv }})</td>
+        <tr>
+            <th>cong_dist_abbrv</th>
+            <td>{{ object.cong_dist_abbrv }}</td>
+        <tr>
+            <th>super_court_abbrv</th>
+            <td>{{ object.super_court_abbrv }}</td>
+        <tr>
+            <th>judic_dist_abbrv</th>
+            <td>{{ object.judic_dist_abbrv }}</td>
+        <tr>
+            <th>nc_senate_abbrv</th>
+            <td>{{ object.nc_senate_abbrv }}</td>
+        <tr>
+            <th>nc_house_abbrv</th>
+            <td>{{ object.nc_house_abbrv }}</td>
+        <tr>
+            <th>county_commiss_desc</th>
+            <td>{{ object.county_commiss_desc }} ({{ object.county_commiss_abbrv }})</td>
+        <tr>
+            <th>township_desc</th>
+            <td>{{ object.township_desc }} ({{ object.township_abbrv }})</td>
+        <tr>
+            <th>school_dist_desc</th>
+            <td>{{ object.school_dist_desc }} ({{ object.school_dist_abbrv }})</td>
+        <tr>
+            <th>fire_dist_desc</th>
+            <td>{{ object.fire_dist_desc }} ({{ object.fire_dist_abbrv }})</td>
+        <tr>
+            <th>water_dist_desc</th>
+            <td>{{ object.water_dist_desc }} ({{ object.water_dist_abbrv }})</td>
+        <tr>
+            <th>sewer_dist_desc</th>
+            <td>{{ object.sewer_dist_desc }} ({{ object.sewer_dist_abbrv }})</td>
+        <tr>
+            <th>sanit_dist_desc</th>
+            <td>{{ object.sanit_dist_desc }} ({{ object.sanit_dist_abbrv }})</td>
+        <tr>
+            <th>rescue_dist_desc</th>
+            <td>{{ object.rescue_dist_desc }} ({{ object.rescue_dist_abbrv }})</td>
+        <tr>
+            <th>munic_dist_desc</th>
+            <td>{{ object.munic_dist_desc }} ({{ object.munic_dist_abbrv }})</td>
+        <tr>
+            <th>dist_1_desc</th>
+            <td>{{ object.dist_1_desc }} ({{ object.dist_1_abbrv }})</td>
+        <tr>
+            <th>dist_2_desc</th>
+            <td>{{ object.dist_2_desc }} ({{ object.dist_2_abbrv }})</td>
+        <tr>
+            <th>vtd_desc</th>
+            <td>{{ object.vtd_desc }}</td>
+
+</table>
 
 {% endblock %}
